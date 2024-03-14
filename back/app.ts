@@ -1,26 +1,12 @@
-import { Backend, KuzzleRequest } from "kuzzle";
-import { Kuzzle, WebSocket, Http } from "kuzzle-sdk";
-
-// const customRoutes = {
-//   "nyc-open-data-plugin/chat-message": {
-//     // eslint-disable-next-line sort-keys
-//     enroll: { verb: "GET", url: "/_plugin/nyc-open-data-plugin/chat-message" },
-//   },
-// };
-
-// const headers = {
-//   "Accept-Encoding": "gzip, deflate",
-// };
-
-// const options = {
-//   autoReconnect: false,
-// };
+/* eslint-disable @typescript-eslint/no-var-requires */
+import { Backend } from "kuzzle";
+import { Kuzzle, WebSocket } from "kuzzle-sdk";
 
 const kuzzle = new Kuzzle(new WebSocket("localhost"));
 
-//const kuzzle = new Kuzzle(httpProtocol);
-// Instantiate an application
-const app = new Backend("playground");
+const app = new Backend("Message-chat");
+
+// Fonction pour détecter les mots impolis
 
 app
   .start()
@@ -30,7 +16,7 @@ app
       .then(async () => {
         // Now we can interact with Kuzzle API
         // eslint-disable-next-line no-console
-        console.log("rer");
+        console.log("Serveur on");
         // Interact with Kuzzle API to creates a new index if it does not exists
         if (!(await kuzzle.index.exists("nyc-open-data"))) {
           await kuzzle.index.create("nyc-open-data");
@@ -59,6 +45,3 @@ app
   })
   // eslint-disable-next-line no-console
   .catch(console.error);
-// Now we can register features
-
-// Start the application
