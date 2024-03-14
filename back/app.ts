@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
 import { Backend } from "kuzzle";
 import { Kuzzle, WebSocket } from "kuzzle-sdk";
 
