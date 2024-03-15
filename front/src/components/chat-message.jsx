@@ -7,7 +7,7 @@ const Chat = () => {
 const [messages, setMessages] = useState([]);
 const [newMessage, setNewMessage] = useState('');
 const [Author, setAuthor] = useState('');
-const { lastJsonMessage, sendJsonMessage } = useWebSocket('ws://localhost:7512'); // Remplacez l'URL par celle de votre backend Kuzzle
+const { lastJsonMessage, sendJsonMessage } = useWebSocket('ws://localhost:7512');
 
 const sendMessage = () => {
   if (newMessage.length > 0 && newMessage.length <= 255) {

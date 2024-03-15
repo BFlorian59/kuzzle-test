@@ -3,9 +3,7 @@ import { Kuzzle, WebSocket } from "kuzzle-sdk";
 
 const kuzzle = new Kuzzle(new WebSocket("localhost"));
 
-const app = new Backend("Message-chat");
-
-// Fonction pour détecter les mots impolis
+const app = new Backend("playground");
 
 app
   .start()
